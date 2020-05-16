@@ -56,9 +56,9 @@ This implementation requires the following dependencies (tested on Window 10):
 * Run project:
 
 		python manage.py runserver 0.0.0.0:8000
-* Run browser:
+* Open browser:
 			
-		http://127.0.0.1:8000/home
+	http://127.0.0.1:8000/home
 
 # Network
 ### Requirements
