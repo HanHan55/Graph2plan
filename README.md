@@ -42,14 +42,14 @@ This implementation requires the following dependencies (tested on Window 10):
 
 ###  Run
 
-* [The Data](http://vcc.tech/file/upload_file/Data/G2P/Data.7z):
-	
+* Download Data:
+	[Data](http://vcc.tech/file/upload_file/Data/G2P/Data.7z)
 	Place the downloaded data files under the corresponding project folder by the corresponding folder name.
 	
-* The project:
+* Run project:
 
 		python manage.py runserver 0.0.0.0:8000
-* The browser:
+* Run browser:
 			
 		http://127.0.0.1:8000/home
 
