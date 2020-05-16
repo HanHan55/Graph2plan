@@ -6,7 +6,7 @@ An interactive interface, where the user can edit the retrieved graph and adapt 
 #### Graph2Plan: Learning Floorplan Generation from Layout Graphs
 [project page](https://vcc.tech/research/2020/Graph2Plan) | [video & demo](https://vcc.tech/file/upload_file//image/research/att202005081043/Graph2Plan.mp4)   
 
-Ruizhen Hu, Zeyu Huang, Yuhan Tang, [Oliver Van kaick](http://people.scs.carleton.ca/~olivervankaick/index.html), [Hao Zhang](http://www.cs.sfu.ca/~haoz/), [Hui Huang](http://vcc.szu.edu.cn/index-2.html)
+[Ruizhen Hu](http://csse.szu.edu.cn/staff/ruizhenhu/), Zeyu Huang, Yuhan Tang, [Oliver Van kaick](http://people.scs.carleton.ca/~olivervankaick/index.html), [Hao Zhang](http://www.cs.sfu.ca/~haoz/), [Hui Huang](http://vcc.szu.edu.cn/index-2.html)
 
 SIGGRAPH 2020
 
