@@ -1,7 +1,7 @@
 # Graph2plan
 An interactive interface, where the user can edit the retrieved graph and adapt it as needed. The user can add or delete room nodes and/or adjacency edges, or move nodes around to change the layout.
 
-![Interface Image](https://github.com/HanHan55/Graph2plan/raw/master/House/Img/interface.jpg)
+![Interface Image](https://github.com/HanHan55/Graph2plan/raw/master/Interface/Img/interface.jpg)
 
 #### Graph2Plan: Learning Floorplan Generation from Layout Graphs
 [project page](https://vcc.tech/research/2020/Graph2Plan) | [video & demo](https://vcc.tech/file/upload_file//image/research/att202005081043/Graph2Plan.mp4)   
@@ -12,7 +12,7 @@ SIGGRAPH 2020
 
 We introduce a learning framework for automated floorplan generation which combines generative modeling using deep neural networks and userin- the-loop designs to enable human users to provide sparse design constraints. Such constraints are represented by a layout graph. The core component of our learning framework is a deep neural network, Graph2Plan, which converts a layout graph, along with a building boundary, into a floorplan that fulfills both the layout and boundary constraints. Given an input building boundary, we allow a user to specify room counts and other layout constraints, which are used to retrieve a set of floorplans, with their associated layout graphs, from a database. For each retrieved layout graph, along with the input boundary, Graph2Plan first generates a corresponding raster floorplan image, and then a refined set of boxes representing the rooms. Graph2Plan is trained on RPLAN, a large-scale dataset consisting of 80K annotated floorplans. The network is mainly based on convolutional processing over both the layout graph, via a graph neural network (GNN), and the input building boundary, as well as the raster floorplan images, via conventional image convolution. We demonstrate the quality and versatility of our floorplan generation framework in terms of its ability to cater to different user inputs.We conduct both qualitative and quantitative evaluations, ablation studies, and comparisons with state-of-the-art approaches.
 
-![Paper Image](https://github.com/HanHan55/Graph2plan/raw/master/House/Img/paper.png)
+![Paper Image](https://github.com/HanHan55/Graph2plan/raw/master/Interface/Img/paper.png)
 
 
 #### Contact
@@ -42,7 +42,7 @@ This implementation requires the following dependencies (tested on Window 10):
 
 ###  Run
 
-* [The Data]():
+* [The Data](http://vcc.tech/file/upload_file/Data/G2P/Data.7z):
 	
 	Place the downloaded data files under the corresponding project folder by the corresponding folder name.
 	
