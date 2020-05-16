@@ -1,0 +1,197 @@
+
+i.desc {
+    font-size: 1.2em;
+    line-height: 1.1em;
+    color: #768799;
+}
+.bold {
+    font-weight: 500;
+    color: #525e6b;
+}
+.plugin-demo-header {
+    text-align: center;
+    margin: 1em 2em 6em 2em;
+}
+/*Sections*/
+
+.feature {
+    background-color: #3366cc;
+    color: white;
+    text-shadow: white 1px 1px;
+    border-radius: 100%;
+    width: 75px;
+    height: 75px;
+    line-height: 85px;
+    vertical-align: baseline;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+.feature-desc {
+    font-variant: small-caps;
+    text-align: center;
+}
+.section-cont {
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    padding: 1.5em;
+    box-shadow: #cadee9 -1px 1px 10px;
+    display: block;
+}
+.feature-cont {
+    text-align: center;
+}
+.feature-cont p {
+    margin-left: 2em;
+    margin-top: 1em;
+}
+.section-label {
+    font-size: 2em;
+    color: #647883;
+    font-weight: bold;
+    font-variant: small-caps;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+#round {
+    min-height: 25em;
+}
+#menu-v-example {
+    min-height: 40em;
+}
+#docs {
+    display: none;
+    margin: auto;
+}
+/*Menus*/
+
+#gooey-upper .gooey-menu-item,
+#gooey-upper .open-button {
+    left: 50%;
+    top: 50%;
+}
+#gooey-h .open-button,
+#gooey-h .gooey-menu-item {
+    margin-top: 4.2em;
+    margin-left: .6em;
+}
+#gooey-v .open-button,
+#gooey-v .gooey-menu-item {
+    margin-top: 30em;
+}
+/*#gooey-round,*/
+/*#gooey-API {*/
+/*    left: 30%;*/
+/*    top: 50%;*/
+/*}*/
+/*#gooey-round .open-button,*/
+/*#gooey-API .open-button,*/
+/*#gooey-round .gooey-menu-item,*/
+/*#gooey-API .gooey-menu-item {*/
+/*    margin-top: 6.5em;*/
+/*    margin-left: 3.2em;*/
+/*}*/
+.fa.fa-angle-double-up {
+    position: fixed;
+    left: 95%;
+    bottom: 0%;
+    cursor: pointer;
+    color: #748c99;
+}
+/* Responsive styles */
+
+@media screen and (min-device-width: 320px) and (orientation: portrait) {
+.fa.fa-angle-double-up {
+        left: 75%;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 780px) and (orientation: landscape) {
+.fa.fa-angle-double-up {
+        left: 89%;
+    }
+
+}
+
+@media (max-width: 780px) {
+
+    .code-example {
+        margin-top: 5em;
+    }
+    #gooey-upper {
+        margin: 0;
+    }
+    #gooey-upper .gooey-menu-item,
+    #gooey-upper .open-button {
+        left: 44%;
+        top: 70%;
+    }
+    #gooey-round .gooey-menu-item, #gooey-round .open-button {
+        top:50%;
+    }
+    #gooey-h .open-button,
+    #gooey-h .gooey-menu-item {
+        top: 20%;
+        left: 20%;
+    }
+    .round-example {
+        min-height: 20em;
+    }
+    #gooey-v .open-button,
+    #gooey-v .gooey-menu-item {
+        margin-top: 0;
+    }
+    #gooey-v {
+        margin-top: 24em;
+    }
+    .event-api-ex {
+        min-height: 23em;
+    }
+    #gooey-API {
+        margin-top:6em;
+    }
+    .vertical-example {
+        min-height: 15em;
+    }
+    #gooey-round,
+    #gooey-API {
+        top: 30%;
+    }
+    #gooey-round .open-button,
+    #gooey-API .open-button,
+    #gooey-round .gooey-menu-item,
+    #gooey-API .gooey-menu-item {
+        margin-top: 3.5em;
+        margin-left: 3.2em;
+    }
+    .gooeySVG {
+        width: 0;
+        height: 0;
+    }
+    #gooey-h .open-button,
+    #gooey-h .gooey-menu-item {
+        margin-top: .8em;
+    }
+    .prettyprint {
+        font-size: .7em;
+    }
+    .plugin-demo-header {
+        margin: 1em 2em 5em 2em;
+    }
+    .feature {
+        width: 55px;
+        height: 55px;
+        line-height: 65px;
+    }
+    .feature-desc {
+        font-size: 1em;
+    }
+    .section-label {
+        font-size: 1.5em;
+        margin-top: 1em;
+    }
+    #menu-v-example {
+        min-height: 35em;
+    }
+}
+

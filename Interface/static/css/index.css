@@ -1,0 +1,408 @@
+@charset "utf-8";
+
+/*room add button*/
+.rmbt {
+    margin: auto 0
+}
+
+.rmbt a {
+    height: 100px;
+    float: left;
+    list-style: none;
+    border-radius: 50%;
+}
+
+.rmbt a img {
+    height: 50px;
+    width: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all ease .3s;
+    transition: all ease .5s;
+}
+
+.rmbt a img:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.50);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.rmbt a text {
+    font-size: 17px;
+    color: #ffffff;
+    font-style: normal;
+    width: 60px;
+    border-width: 10px;
+    border-radius: 20%;
+    background-color: #bfbfbf;
+}
+
+/*room list*/
+div.wrapper {
+    background: #a99a92;
+    /*margin: 0px auto auto auto;*/
+    border-radius: 20px;
+    box-shadow: 0 6px 30px 18px rgba(199, 199, 199, 0.75);
+    transition: transform 0.3s ease-in;
+}
+
+div.wrapper:hover {
+    transform: scale(1.01);
+}
+
+div#rmlist {
+    height: 50px;
+    position: relative;
+    top: 0; /* needed to keep on top */
+    bottom: 0;
+    padding: 8px;
+    z-index: 5;
+    background: #b43f3f;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0 2px 8px rgba(41, 10, 77, .5);
+
+}
+
+div#rmlist input {
+    font-family: Arial;
+    TEXT-ALIGN: center;
+    font-size: 1rem;
+    height: 35px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    float: left;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fdfdfd;
+    text-indent: 2%;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    transition: all 0.5s ease;
+}
+
+div#rmlist input:focus {
+    background: rgba(35, 14, 87, 0.5);
+}
+
+div#rmlist input::-moz-placeholder {
+    color: white;
+}
+
+
+div#rmlist div#animationDiv { /*being used for mojs animation*/
+    height: 50px;
+    position: absolute;
+    right: 15px;
+    width: 50px;
+}
+
+div#rmlist button {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+
+    /*top: 15px; optional, it is so by default and right not needed as applied on parent! :D */
+    border: 0px;
+    outline: 0px;
+    border-color: transparent;
+    /*outline-style: 0 px;*/
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    z-index: 1; /*to ensure its on top of container*/
+    box-shadow: -2px 2px 5px rgba(41, 10, 77, .5);;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    transition: all 0.2s ease;
+
+
+}
+
+div#rmlist button:hover {
+    box-shadow: none;
+    transform: scale(0.9);
+}
+
+div#rmlist button:active {
+    background: rgba(191, 165, 223, 0.3);
+    outline: none;
+    outline-width: 0;
+    outline-color: transparent;
+}
+
+
+div#rmlist button svg {
+    width: 40%;
+    height: 40%;
+    position: relative;
+    top: 5%;
+    fill: #b43f3f;
+    z-index: 5;
+
+}
+
+div#rmlist button.rotate {
+    transform: rotate(180deg);
+    transition: all 0.3s ease;
+}
+
+
+div.container {
+    width: 100%;
+    float: left;
+
+}
+
+ul.todo {
+    list-style: none;
+
+}
+
+ul.todo li {
+    background: #fff;
+    color: #b43f3f;
+    padding: 15px;
+    margin: 15px 15px 15px 15px;
+    border-radius: 8px 0 8px 0;
+    box-shadow: -2px 2px 4px rgba(41, 10, 77, .5);
+    transition: all 0.2s ease-in;
+    transition: opacity 0.3s ease-out;
+    transition: opacity 0.2s ease-in;
+    /* transition: height 0.3s ease-in; */
+    max-height: 50px;
+    opacity: 1;
+    position: relative; /* so we can absolute the buttons*/
+
+
+}
+
+ul.todo li img.showrmitem {
+    enable-background: new 0 0 22 22;
+    z-index: 999;
+
+}
+
+ul.todo li.deleted, ul.todo li.invisible {
+    opacity: 0;
+
+}
+
+ul.todo li:hover {
+
+    transform: scale(0.995);
+    box-shadow: none;
+    background: rgb(255, 241, 219);
+    background: -moz-linear-gradient(left, rgb(255, 231, 194), rgb(255, 244, 228));
+    background: -webkit-linear-gradient(left, rgb(255, 231, 194), rgb(255, 244, 228));
+    background: -o-linear-gradient(left, rgb(255, 231, 194), rgb(255, 244, 228));
+}
+
+
+ul.todo li:last-of-type {
+    margin-bottom: 0;
+}
+
+ul.todo li .buttons {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 0;
+    right: -1%;
+
+
+}
+
+ul.todo li img.showrmitem {
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: none;
+    position: relative;
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+
+}
+
+ul.todo li .buttons button {
+    width: 30px;
+    height: 30px;
+
+    margin: 10px 0 0 0;
+
+    float: left;
+    background: none;
+    position: relative;
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+
+}
+
+
+ul.todo li .buttons button:last-of-type::before {
+    content: ' ';
+    width: 1px;
+    height: 30px;
+    background: #edf0f1;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: -20;
+
+}
+
+ul.todo li .buttons button svg {
+    width: 22px;
+    height: 22px;
+}
+
+
+ul.todo li .buttons button svg .fill {
+
+    transition: all 0.3s ease-out;
+
+}
+
+ul.todo li .buttons button.deleteButton svg .fill {
+
+    fill: #C0CECB;
+
+}
+
+
+ul.todo li .buttons button.checkButton svg .fill {
+
+    fill: rgb(47, 167, 77);
+
+}
+
+ul.todo li .buttons button.checkButton svg .noFill {
+
+    fill: none;
+
+}
+
+
+ul.todo:not(#completed) li .buttons button.checkButton:hover svg .noFill, ul.todo#completed li .buttons button.checkButton svg .noFill {
+
+    fill: rgb(84, 201, 113);
+
+}
+
+
+ul.todo:not(#completed) li .buttons button.checkButton:hover svg .fill, ul.todo#completed li .buttons button.checkButton svg .fill {
+
+    fill: #fff;
+
+}
+
+
+ul.todo li .buttons button.deleteButton:hover svg .fill {
+
+    fill: rgb(201, 41, 41);
+
+}
+
+hr.divider {
+    width: 50%;
+    margin: 20px auto 5px auto;
+}
+
+
+#completed {
+    opacity: 0.5;
+}
+
+
+#checkAnimateDiv {
+    width: 1px;
+    height: 1px;
+    z-index: -10;
+    position: relative;
+    bottom: 12px;
+    left: 15px;
+}
+
+button.bt {
+    /*    border: none;*/
+    /*background-color: transparent;*/
+    /*outline: none;width:100%;*/
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white !important;
+}
+
+div.uploader {
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    height: -webkit-fill-available;
+
+}
+
+a.uploadaa {
+
+    position: relative;
+
+    text-decoration: none;
+
+}
+
+svg#gooeySVG0 {
+    width: 0px;
+}
+
+.pngls {
+    border: none;
+    color: black;
+    width: 100%;
+    padding: 6px;
+        background-color: #f0f0f0;
+
+}
+
+.tooltip {
+    font-family: simsun;
+    font-size: 16px;
+    width: 10px;
+    height: auto;
+    position: absolute;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+

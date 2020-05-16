@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+
+    <!-- start: Meta -->
+    <meta charset="utf-8">
+    <title>Home</title>
+    <meta name="description" content="Bootstrap Metro Dashboard">
+    <meta name="author" content="">
+    <meta name="keyword" content="">
+    <!-- end: Meta -->
+
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- end: Mobile Specific -->
+
+    <!-- start: CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--核心样式-->
+
+    <link id="bootstrap-style" href="../static/Page/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/Page/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link id="base-style" href="../static/Page/css/style.css" rel="stylesheet">
+    <link id="base-style-responsive" href="../static/Page/css/style-responsive.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext'
+          rel='stylesheet' type='text/css'>
+
+
+    <!-- end: CSS -->
+
+
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ie-style" href="css/ie.css" rel="stylesheet">
+	<![endif]-->
+
+    <!--[if IE 9]>
+		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
+	<![endif]-->
+
+    <!-- start: Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- end: Favicon -->
+
+
+</head>
+
+<body onselectstart="return false" class="cancelselect" style="background: white;">
+
+<!-- start: Header -->
+
+<div class="container-fluid-full" style="height: 100%;">
+    <div class="row-fluid" style="height: 100%;">
+
+
+        <!-- start: Main Menu -->
+        <div id="sidebar-left" class="span2" style="opacity: 0.0;">
+            <div class="nav-collapse sidebar-nav">
+                <ul class="nav nav-tabs nav-stacked main-menu">
+
+                </ul>
+            </div>
+        </div>
+        <!-- end: Main Menu -->
+
+        <noscript>
+            <div class="alert alert-block span10">
+                <h4 class="alert-heading">Warning!</h4>
+                <p>You need to have <a href="" target="_blank">JavaScript</a> enabled to use this site.</p>
+            </div>
+        </noscript>
+
+        <!-- start: Content -->
+        <div id="content" class="span9">
+
+
+            <link rel="stylesheet" href="../static/select/element.min.css">
+
+            <link rel="stylesheet" href="../static/select/style.css">
+
+            <div style=" z-index: 99;    margin-top: 2%; margin-left: 4%;">
+                <div id="BedRoomVue" style="z-index:1001;width: 291px;position: absolute;">
+                    <div class="app-canvas">
+                        <div class="menubox" tabindex="0" style="width: 100%;">
+                            <div class="menubox__label">
+                                <img src="../static/icon/BedRoom.png" width="20" height="20"
+                                     alt="" class="material-icons">
+                                <span id="BedRoomlb" class="menubox__label-text">BedRoom</span>
+                            </div>
+                            <div class="menubox__contents" style="padding: 10px;">
+                                <ul class="menubox__options">
+                                    {#                    BedRoomVue#}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <el-radio-group id="BedRoom" v-model="BedRoomradio1" style="display: block;"
+                                                            @change="BedRoomnum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                                <el-radio-button label="3+"></el-radio-button>
+                                                <el-radio-button label="4+"></el-radio-button>
+                                                <el-radio-button label="5+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="BedRoommt" v-model="BedRoomradio2"
+                                                            @change="BedRoomnum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                                <el-radio-button label="3"></el-radio-button>
+                                                <el-radio-button label="4"></el-radio-button>
+                                                <el-radio-button label="5"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="BedRoom_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="menubox__option" style="text-align: end;">
+                                        <el-button type="primary" @click="Done">Done</el-button>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {#                2#}
+                <div id="BathRoomVue" style="z-index:1001;width: 219px;position: absolute;margin-left:301px;">
+                    <div class="app-canvas">
+                        <div class="menubox2" tabindex="0" style="width: 100%;">
+                            <div class="menubox__label2">
+                                <img src="../static/icon/BathRoom.png" width="20" height="20"
+                                     alt="" class="material-icons"> <span id="BathRoomlb" class="menubox__label-text">BathRoom</span>
+                            </div>
+                            <div class="menubox__contents" style="padding: 10px;">
+                                <ul class="menubox__options">
+                                    {#                    BathRoom#}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <el-radio-group id="BathRoom" v-model="BathRoomradio1"
+                                                            style="display: block;"
+                                                            @change="BathRoomnum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                                <el-radio-button label="3+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="BathRoommt" v-model="BathRoomradio2"
+                                                            @change="BathRoomnum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                                <el-radio-button label="3"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="BathRoom_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="menubox__option" style="text-align: end;">
+                                        <el-button type="primary" @click="Done2">Done</el-button>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {#1#}
+                <div id="otherVue" style="z-index:1000;width: 269px;position: absolute;margin-left:530px;">
+                    <div class="app-canvas">
+                        <div class="menubox1 " tabindex="0" style="width: 100%;">
+                            <div class="menubox__label1">
+                                <img src="../static/icon/Other.png" width="20" height="20"
+                                     alt="" class="material-icons"> <span id="otherlb" class="menubox__label-text">Other Room Types</span>
+                            </div>
+                            <div class="menubox__contents" style="padding: 10px;">
+                                <ul class="menubox__options">
+                                    {#Kitchen#}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="Kitchenlb" class="menubox__option-label">Kitchen</span>
+                                            </label>
+
+                                            <el-radio-group id="Kitchen" v-model="Kitchenradio1" style="display: block;"
+                                                            @change="Kitchennum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="Kitchenmt" v-model="Kitchenradio2"
+                                                            @change="Kitchennum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="Kitchen_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    {#           Balcony         #}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="Balconylb" class="menubox__option-label">Balcony</span>
+                                            </label>
+
+                                            <el-radio-group id="Balcony" v-model="Balconyradio1" style="display: block;"
+                                                            @change="Balconynum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                                <el-radio-button label="3+"></el-radio-button>
+                                                <el-radio-button label="4+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="Balconymt" v-model="Balconyradio2"
+                                                            @change="Balconynum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                                <el-radio-button label="3"></el-radio-button>
+                                                <el-radio-button label="4"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="Balcony_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    {#            DiningRoom        #}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="DiningRoomlb" class="menubox__option-label">DiningRoom</span>
+                                            </label>
+
+                                            <el-radio-group id="DiningRoom" v-model="DiningRoomradio1"
+                                                            style="display: block;"
+                                                            @change="DiningRoomnum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="DiningRoommt" v-model="DiningRoomradio2"
+                                                            @change="DiningRoomnum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="DiningRoom_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    {#           Entrance         #}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="Entrancelb" class="menubox__option-label">Entrance</span>
+                                            </label>
+
+                                            <el-radio-group id="Entrance" v-model="Entranceradio1"
+                                                            style="display: block;"
+                                                            @change="Entrancenum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="Entrancemt" v-model="Entranceradio2"
+                                                            @change="Entrancenum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="Entrance_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    {#               Storage     #}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="Storagelb" class="menubox__option-label">Storage</span>
+                                            </label>
+
+                                            <el-radio-group id="Storage" v-model="Storageradio1" style="display: block;"
+                                                            @change="Storagenum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                                <el-radio-button label="3+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="Storagemt" v-model="Storageradio2"
+                                                            @change="Storagenum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                                <el-radio-button label="3"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="Storage_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    {#       Wallin             #}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="Wallinlb" class="menubox__option-label">Wallin</span>
+                                            </label>
+
+                                            <el-radio-group id="Wallin" v-model="Wallinradio1" style="display: block;"
+                                                            @change="Wallinnum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                                <el-radio-button label="3+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="Wallinmt" v-model="Wallinradio2" @change="Wallinnum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                                <el-radio-button label="3"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="Wallin_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="menubox__option" style="text-align: end;">
+                                        <el-button type="primary" @click="Done1">Done</el-button>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {#                3#}
+                <div id="detailVue" style="z-index:1000;width: 312px;position: absolute;margin-left:809px;">
+                    <div class="app-canvas">
+                        <div class="menubox3 " tabindex="0" style="width: 100%;">
+                            <div class="menubox__label3">
+                                <img src="../static/icon/Detail.png" width="20" height="20"
+                                     alt="" class="material-icons"> <span id="detailedlb" class="menubox__label-text">Detailed Bedroom Types</span>
+                            </div>
+                            <div class="menubox__contents" style="padding: 10px;">
+                                <ul class="menubox__options">
+                                    {#                    MasterRoom#}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="MasterRoomlb" class="menubox__option-label">MasterRoom</span>
+                                            </label>
+
+                                            <el-radio-group id="MasterRoom" v-model="MasterRoomradio1"
+                                                            style="display: block;"
+                                                            @change="MasterRoomnum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                                <el-radio-button label="3+"></el-radio-button>
+                                                <el-radio-button label="4+"></el-radio-button>
+                                                <el-radio-button label="5+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="MasterRoommt" v-model="MasterRoomradio2"
+                                                            @change="MasterRoomnum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                                <el-radio-button label="3"></el-radio-button>
+                                                <el-radio-button label="4"></el-radio-button>
+                                                <el-radio-button label="5"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="MasterRoom_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    {#SecondRoom#}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="SecondRoomlb" class="menubox__option-label">SecondRoom</span>
+                                            </label>
+
+                                            <el-radio-group id="SecondRoom" v-model="SecondRoomradio1"
+                                                            style="display: block;"
+                                                            @change="SecondRoomnum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                                <el-radio-button label="3+"></el-radio-button>
+                                                <el-radio-button label="4+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="SecondRoommt" v-model="SecondRoomradio2"
+                                                            @change="SecondRoomnum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                                <el-radio-button label="3"></el-radio-button>
+                                                <el-radio-button label="4"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="SecondRoom_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    {#           GuestRoom         #}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="GuestRoomlb" class="menubox__option-label">GuestRoom</span>
+                                            </label>
+
+                                            <el-radio-group id="GuestRoom" v-model="GuestRoomradio1"
+                                                            style="display: block;"
+                                                            @change="GuestRoomnum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                                <el-radio-button label="3+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="GuestRoommt" v-model="GuestRoomradio2"
+                                                            @change="GuestRoomnum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                                <el-radio-button label="3"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="GuestRoom_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    {#            StudyRoom        #}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="StudyRoomlb" class="menubox__option-label">StudyRoom</span>
+                                            </label>
+
+                                            <el-radio-group id="StudyRoom" v-model="StudyRoomradio1"
+                                                            style="display: block;"
+                                                            @change="StudyRoomnum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                                <el-radio-button label="3+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="StudyRoommt" v-model="StudyRoomradio2"
+                                                            @change="StudyRoomnum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                                <el-radio-button label="3"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="StudyRoom_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    {#           ChildRoom         #}
+                                    <li class="menubox__option">
+                                        <div>
+                                            <label class="list_label">
+                                                <span id="ChildRoomlb" class="menubox__option-label">ChildRoom</span>
+                                            </label>
+
+                                            <el-radio-group id="ChildRoom" v-model="ChildRoomradio1"
+                                                            style="display: block;"
+                                                            @change="ChildRoomnum">
+                                                <el-radio-button label="Any"></el-radio-button>
+                                                <el-radio-button label="1+"></el-radio-button>
+                                                <el-radio-button label="2+"></el-radio-button>
+                                                <el-radio-button label="3+"></el-radio-button>
+                                            </el-radio-group>
+                                            <el-radio-group id="ChildRoommt" v-model="ChildRoomradio2"
+                                                            @change="ChildRoomnum_mt"
+                                                            style="display: none;">
+                                                <el-radio-button label="0"></el-radio-button>
+                                                <el-radio-button label="1"></el-radio-button>
+                                                <el-radio-button label="2"></el-radio-button>
+                                                <el-radio-button label="3"></el-radio-button>
+
+                                            </el-radio-group>
+
+                                            <label class="list_label">
+                                                <el-checkbox @change="ChildRoom_mt" :label="0">Use exact match
+                                                </el-checkbox>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="menubox__option" style="text-align: end;">
+                                        <el-button type="primary" @click="Done3">Done</el-button>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="generate" onclick="NumSearch()"
+                     style="cursor: pointer;font-size:20px;width: 120px;background-color: #bbd1d8;color: #fff;border-radius: 30px;text-align: center;vertical-align: middle;line-height: 40px;height: 40px;position: absolute;margin-left: 1131px;">
+                    <img
+                            src="../static/icon/Search.png" width="20" height="20" alt="">
+                    Search
+                </div>
+            </div>
+            <script type="text/javascript" src="../static/select/vue.min.js"></script>
+            <script src="../static/select/element.min.js"></script>
+            <script type="text/javascript" src="../static/select/dealselect.js"></script>
+            <script src="../static/select/index.js"></script>
+            <script src="../static/select/index1.js"></script>
+            <script src="../static/select/index2.js"></script>
+            <script src="../static/select/index3.js"></script>
+            <div class="row-fluid" style="margin-top: 7%;margin-left: -0.5%;display: flex;">
+                <div style="display: flex;margin-left: 370px;">
+                    <div style="width: 20px;height: 20px;background-color: #f5f2e2;border-radius: 15px;border: 2px solid #a7a39d;"></div>
+                    <span style="padding-left: 10px;">Public area</span>
+                </div>
+                <div style="display: flex;margin-left: 30px;">
+                    <div style="width: 20px;height: 20px;background-color: #fff39a;border-radius: 15px;border: 2px solid #a7a39d;"></div>
+                    <span style="padding-left: 10px;">Bedroom</span>
+                </div>
+                <div style="display: flex;margin-left: 30px;">
+                    <div style="width: 20px;height: 20px;background-color: #bfecff;border-radius: 15px;border: 2px solid #a7a39d;"></div>
+                    <span style="padding-left: 10px;">Bathroom</span>
+                </div>
+                <div style="display: flex;margin-left: 30px;">
+                    <div style="width: 20px;height: 20px;background-color: #d3d981;border-radius: 15px;border: 2px solid #a7a39d;"></div>
+                    <span style="padding-left: 10px;">Balcony</span>
+                </div>
+
+                <div style="display: flex;margin-left: 30px;">
+                    <div style="width: 20px;height: 20px;background-color: #f4d7d1;border-radius: 15px;border: 2px solid #a7a39d;"></div>
+                    <span style="padding-left: 10px;">Kitchen</span>
+                </div>
+                <div style="display: flex;margin-left: 30px;">
+                    <div style="width: 20px;height: 20px;background-color: #ffdfb6;border-radius: 15px;border: 2px solid #a7a39d;"></div>
+                    <span style="padding-left: 10px;">Storage</span>
+                </div>
+
+            </div>
+
+
+            <link rel="stylesheet" href="../static/Btopenjs/bootstrap.min.css">
+            <script type="text/javascript" src="../static/Btopenjs/jquery-2.1.3.min.js"></script>
+            <div class="clearfix"></div>
+            <link id="bootstrap-style" href="../static/Page/css/bootstrap.min.css" rel="stylesheet">
+            <link href="../static/Page/css/bootstrap-responsive.min.css" rel="stylesheet">
+            <link id="base-style" href="../static/Page/css/style.css" rel="stylesheet">
+            <link id="base-style-responsive" href="../static/Page/css/style-responsive.css" rel="stylesheet">
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext'
+                  rel='stylesheet' type='text/css'>
+            <div class="row-fluid">
+                <script type="text/javascript" src="../static/js/graph.js"></script>
+                <script type="text/javascript" src="../static/js/d3.v5.min.js"></script>
+                <script>
+                    const SETTINGS = {
+                        rebound: {
+                            tension: 16,
+                            friction: 5
+                        },
+                        spinner: {
+                            id: 'spinner',
+                            radius: 90,
+                            sides: 3,
+                            depth: 4,
+                            colors: {
+                                //background: '#231E76',
+                                //stroke: '#231E76',
+                                background: '#f0f0f0',
+                                stroke: '#272633',
+                                base: null,
+                                child: '#272633'
+                            },
+                            alwaysForward: true, // When false the spring will reverse normally.
+                            restAt: 0.5, // A number from 0.1 to 0.9 || null for full rotation
+                            renderBase: false
+                        }
+                    };
+                </script>
+
+                <script src="../static/js/load.js"></script>
+                <script type="text/javascript" src="/static/js/buttonEvent.js"></script>
+
+                <div style="width: 100%;margin-left: 4%;margin-top: 2%;">
+                    <div id="topbox" style="display: flex;">
+                        <div id="addVue"
+                             style="z-index:1000;width: 107px;position: absolute;    margin-top: 7px;margin-left: 10px;">
+                            <div class="app-canvas">
+                                <div class="menubox4 " tabindex="0" style="width: 100%;">
+                                    <div class="menubox__label4"
+                                         style=" width: 130px;padding: 0.3rem;font-size: 13px;height: 30px;">
+                                        <img src="../static/icon/plus.png" width="15" height="15"
+                                             alt="" class="material-icons"> <span id="addlb"
+                                                                                  class="menubox__label-text">Add node</span>
+                                    </div>
+                                    <div class="menubox__contents" style="padding: 7px;">
+                                        <ul class="menubox__options">
+                                            {# BedRoom#}
+                                            <li class="menubox__option">
+                                                <div>
+                                                    <label class="list_label" style="padding: 0.2rem 0rem 0.0rem 0rem;">
+                                                        {#                                                #}
+                                                        <div class="menubox__option-label" style="display: flex;"
+                                                             id="BedRoom_a" onclick="addLivingRoom(this.id)">
+                                                            <div style="width: 15px;height: 15px;background-color: #fff39a;border-radius: 15px;border: 2px solid #a7a39d;margin-top: 3px;"></div>
+                                                            <span style="padding-left: 10px;font-size: 13px;">Bedroom</span>
+                                                        </div>
+
+                                                        {#                                                <span id="MasterRoomlb" >MasterRoom</span>#}
+                                                    </label>
+
+                                                </div>
+                                            </li>
+                                            {#                                            Bathroom#}
+                                            <li class="menubox__option">
+                                                <div>
+                                                    <label class="list_label" style="padding: 0.2rem 0rem 0.0rem 0rem;">
+                                                        {#               bfecff                                 #}
+                                                        <div class="menubox__option-label" style="display: flex;"
+                                                             id="Bathroom_a" onclick="addLivingRoom(this.id)">
+                                                            <div style="width: 15px;height: 15px;background-color: #bfecff;border-radius: 15px;border: 2px solid #a7a39d;margin-top: 3px;"></div>
+                                                            <span style="padding-left: 10px;">Bathroom</span>
+                                                        </div>
+
+                                                        {#                                                <span id="MasterRoomlb" >MasterRoom</span>#}
+                                                    </label>
+
+                                                </div>
+                                            </li>
+                                            {#                                            Balcony#}
+                                            <li class="menubox__option">
+                                                <div>
+                                                    <label class="list_label" style="padding: 0.2rem 0rem 0.0rem 0rem;">
+                                                        {#                                                #}
+                                                        <div class="menubox__option-label" style="display: flex;"
+                                                             id="Balcony_a" onclick="addLivingRoom(this.id)">
+                                                            <div style="width: 15px;height: 15px;background-color: #d3d981;border-radius: 15px;border: 2px solid #a7a39d;margin-top: 3px;"></div>
+                                                            <span style="padding-left: 10px;">Balcony</span>
+                                                        </div>
+
+                                                        {#                                                <span id="MasterRoomlb" >MasterRoom</span>#}
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            {#Kitchen#}
+                                            <li class="menubox__option">
+                                                <div>
+                                                    <label class="list_label" style="padding: 0.2rem 0rem 0.0rem 0rem;">
+                                                        {#                                                #}
+                                                        <div class="menubox__option-label" style="display: flex;"
+                                                             id="Kitchen_a" onclick="addLivingRoom(this.id)">
+                                                            <div style="width: 15px;height: 15px;background-color: #f4d7d1;border-radius: 15px;border: 2px solid #a7a39d;margin-top: 3px;"></div>
+                                                            <span style="padding-left: 10px;">Kitchen</span>
+                                                        </div>
+
+                                                        {#                                                <span id="MasterRoomlb" >MasterRoom</span>#}
+                                                    </label>
+
+                                                </div>
+                                            </li>
+                                            {#                                            Storge#}
+                                            <li class="menubox__option">
+                                                <div>
+                                                    <label class="list_label" style="padding: 0.2rem 0rem 0.0rem 0rem;">
+                                                        {#                                                #}
+                                                        <div class="menubox__option-label" style="display: flex;"
+                                                             id="Storage_a" onclick="addLivingRoom(this.id)">
+                                                            <div style="width: 15px;height: 15px;background-color: #ffdfb6;border-radius: 15px;border: 2px solid #a7a39d;margin-top: 3px;"></div>
+                                                            <span style="padding-left: 10px;">Storage</span>
+                                                        </div>
+
+                                                        {#                                                <span id="MasterRoomlb" >MasterRoom</span>#}
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="z-index:1000;position: absolute;margin-top: 7px;display: flex;">
+                            <div id="graphSearch"
+                                 style="display:flex;cursor: pointer;color: #000;text-align: center;vertical-align: middle;line-height: 26px;position: absolute;margin-left: 360px;">
+                                <div style="display: none;width: 100px;height: 30px;text-align: center;vertical-align: middle;line-height: 30px;">
+                                    <img
+                                            src="../static/icon/check.png" width="30" height="30" alt="">
+                                    Location
+                                </div>
+                                <div style="display: none;width: 100px;height: 30px;text-align: center;vertical-align: middle;line-height: 30px;">
+                                    <img
+                                            src="../static/icon/checked.png" width="30" height="30" alt="">
+                                    Adjacency
+                                </div>
+                                <div onclick="GraphSearch()"
+                                     style="width: 140px;border: 2px solid #0072ca;border-radius: 30px;height: 30px;margin-left: 10px;"
+                                >
+                                    <img
+                                            src="../static/icon/graphSearch.png" width="20" height="20" alt="">Adjacency
+                                    Search
+                                </div>
+
+                            </div>
+<div id="Editing" style="margin-left: 140px;display:none;">
+    <label>Edit：</label>
+    <input type="radio" name="edit" value="local" checked="true" /><label>Local</label>
+    <input type="radio" name="edit" value="global" /><label>Global</label>
+</div>
+
+                            <div id="graphdiv"
+                                 style="display:none;cursor: pointer;color: #000;width: 90px;border: 2px solid #0072ca;border-radius: 30px;text-align: center;vertical-align: middle;line-height: 26px;height: 30px;position: absolute;margin-left: 300px;">
+                                <input style="opacity: 0;    height: 30px;width: 90px;position: absolute;margin-left: -24px;margin-top: auto;"
+                                       id="graph" onchange="showGraph(this)" type="checkbox"
+                                       checked="checked"/>Graph <img id="graphimg" src="../static/icon/Select.png"
+                                                                     width="20"
+                                                                     height="20"
+                                                                     alt="" class="material-icons">
+                            </div>
+                            <div id="layoutdiv"
+                                 style="display:none;cursor: pointer;color: #000;width: 90px;border: 2px solid #0072ca;border-radius: 30px;text-align: center;vertical-align: middle;line-height: 26px;height: 30px;position: absolute;margin-left: 400px;">
+                                <input style="opacity: 0;    height: 30px;width: 90px;position: absolute;margin-left: -24px;margin-top: auto;"
+                                       id="layout" onchange="showRoom(this)" type="checkbox"
+                                       checked="checked"/>Layout<img
+                                    id="layoutimg" src="../static/icon/Select.png" width="20" height="20"
+                                    alt="" class="material-icons">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="leftbox"
+                         style="border:2px solid #d2d2d2;width: 516px;height: 516px;position: absolute;border-radius: 20px;">
+                        <svg id="LeftBaseSVG" width="256" height="256"
+                             style="background-color: white !important;margin-left: 128px;margin-top: 128px;position: absolute;border-radius: 20px;"></svg>
+                        <svg id="LeftGraphSVG" width="256" height="256"
+                             style="z-index: 999;margin-left: 128px;margin-top: 128px;position: absolute;"></svg>
+                        <svg id="LeftLayoutSVG" width="256" height="256"
+                             style="z-index: 9;margin-left: 128px;margin-top: 128px;position: absolute;"></svg>
+
+                    </div><!--/span-->
+                    <style type="text/css"></style>
+                    <div id="listbox" class="listbox"
+                         style="position: absolute;overflow-y: auto;width:200px;height: 516px;border:2px solid #d2d2d2;margin-left: 526px;border-radius: 20px;">
+                        <div style="">
+                            <div class="todo metro" style="margin-top: 10px;">
+                                <ul id="hsList" class="todo-list">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rightbox"
+                         style="border:2px solid #d2d2d2;width: 516px;height: 516px;    position: absolute;margin-left: 736px;border-radius: 20px;">
+                        <svg id="RightLayoutSVG" width="256" height="256"
+                             style="position: absolute;z-index: 9;    margin-top: 128px;margin-left: 128px;"></svg>
+                        <svg id="RightSVG" width="256" height="256"
+                             style="position: absolute;z-index: 999;margin-top: 128px;margin-left: 128px;"></svg>
+                    </div><!--/span-->
+
+                </div>
+                <script src="../static/select/index4.js"></script>
+
+            </div>
+
+            <div class="row-fluid " style="    margin-top: 540px;margin-left: 4%;margin-bottom: 4%;">
+                <div style="position: absolute;">
+                    <a class="uploadaa" style="background-color: #0072cb;"><input
+                            style="width: 70px;height: auto;z-index: 999;    position: absolute;opacity: 0;" type="file"
+                            id="input" onchange="LoadTestBoundary(this.files)">
+                        <div style="background-color: #0072cb;color: #fff;width: 70px;border-radius: 30px;text-align: center;vertical-align: middle;line-height: 30px;height: 30px;;">
+                            Load
+                        </div>
+                    </a>
+                </div>
+                <div id="Generate"
+                     style="cursor: pointer;background-color: #699cbb;color: #fff;width: 90px;border-radius: 30px;text-align: center;vertical-align: middle;line-height: 30px;height: 30px;position: absolute;margin-left: 80px;">
+                    Generate
+                </div>
+                <div id="downLoad"
+                     style="cursor: pointer;background-color: #5d9043;color: #fff;width: 70px;border-radius: 30px;text-align: center;vertical-align: middle;line-height: 30px;height: 30px;position: absolute;margin-left: 180px;">
+{#                    <a href="../static/data.mat" download="data.mat"#}
+{#                       style="color: #fff; text-decoration: none;">Save</a>#}
+                                        <a
+                       style="color: #fff; text-decoration: none;">Save</a>
+
+                </div>
+                <div id="transfer"
+                     style="cursor: pointer;background-color: #0072cb;color: #fff;width: 90px;border-radius: 30px;text-align: center;vertical-align: middle;line-height: 30px;height: 30px;position: absolute;margin-left:972px;">
+                    Transfer
+                </div>
+
+            </div>
+            <!--/.fluid-container-->
+            <link rel='stylesheet' type='text/css' href='../static/css/index.css'>
+            <style type="text/css">
+                .isDelete li:hover {
+                    color: #fff;
+                    background: #1c00ff;
+                }
+            </style>
+            <div id="isDelete"
+                 style="position:absolute;display: none;z-index:99999;border: 1px solid #ccc; background: #f2f2f2;">
+                <ul style="margin: 0px;padding: 0px;text-align: center;list-style-type: none;">
+                    <li style="padding: 5px;transition: all 0.2s;border: 1px solid #ccc;">Delete</li>
+                    <li style="padding: 5px;transition: all 0.2s;border: 1px solid #ccc;">Scale*0.25</li>
+                    <li style="padding: 5px;transition: all 0.2s;border: 1px solid #ccc;">Scale*0.5</li>
+                    <li style="padding: 5px;transition: all 0.2s;border: 1px solid #ccc;">Scale*5</li>
+                    <li style="padding: 5px;transition: all 0.2s;border: 1px solid #ccc;">Scale*2</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- end: Content -->
+    </div><!--/#content.span10-->
+</div><!--/fluid-row-->
+
+<div class="clearfix"></div>
+
+
+<!-- start: JavaScript-->
+
+
+<script src="../static/Page/js/bootstrap.min.js"></script>
+<script src="../static/js/mo.min.js"></script>
+<script src="../static/js/btnEvent.js"></script>
+<!-- end: JavaScript-->
+
+</body>
+</html>
