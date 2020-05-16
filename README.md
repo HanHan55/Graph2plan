@@ -44,8 +44,14 @@ This implementation requires the following dependencies (tested on Window 10):
 
 * Download Data:
 	[Data](http://vcc.tech/file/upload_file/Data/G2P/Data.7z)
-	Place the downloaded data files under the corresponding project folder by the corresponding folder name.
 	
+		unzip Data.7Z
+	
+	Place the downloaded data files in the folder
+	
+		'Data\Interface\House\retrieval\' to 'Interface\retrieval\'
+		'Data\Interface\House\static\' to 'Interface\static\'
+		'Data\Network\' to 'Network\'
 * Run project:
 
 		python manage.py runserver 0.0.0.0:8000
@@ -92,7 +98,7 @@ python train.py
 
 ### Application
 
-Copy the checkpoint to the web application directory `Interface\House\model` and rename it as `model.pth`
+Copy the checkpoint to the web application directory `Interface\model` and rename it as `model.pth`
 
 ### Acknowledgement
 
