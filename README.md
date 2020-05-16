@@ -44,9 +44,9 @@ This implementation requires the following dependencies (tested on Window 10):
 
 * Download Data:
 
-	[Data](http://vcc.tech/file/upload_file/Data/G2P/Data.7z)
+		http://vcc.tech/file/upload_file/Data/G2P/Data.7z		
 	
-		unzip Data.7Z
+	unzip the data folder
 	
 	Place the downloaded data files in the folder
 	
