@@ -42,23 +42,17 @@ This implementation requires the following dependencies (tested on Window 10):
 
 ###  Run
 
-* Download Data:
+* Download Data: http://vcc.tech/file/upload_file/Data/G2P/Data.7z
 
-	http://vcc.tech/file/upload_file/Data/G2P/Data.7z		
+	unzip the data to this repository
 	
-	unzip the data folder
-	
-	Place the downloaded data files in the folder
-	
-		'Data\Interface\House\retrieval\' to 'Interface\retrieval\'
-		'Data\Interface\House\static\' to 'Interface\static\'
-		'Data\Network\' to 'Network\'
 * Run project:
 
 		python manage.py runserver 0.0.0.0:8000
-* Open browser:
+		
+* Open browser: http://127.0.0.1:8000/home
 			
-	http://127.0.0.1:8000/home
+	
 
 # Network
 ### Requirements
