@@ -37,7 +37,7 @@ This implementation requires the following dependencies (tested on Window 10):
   conda install django opencv scipy pandas
   conda install pytorch==1.3.1 torchvision -c pytorch
   ``` 
-  **Note: there is a fatal bug when using Matlab and pytorch<1.5.0 together on Linux. Please install the latest pytorch 1.5.0+ to use the interface.**
+  **Note: there is a fatal error when using Matlab and pytorch<1.5.0 together on Linux. Please install the latest pytorch 1.5.0+ to use the interface.**
 		
 * Install Matlab Python API (Matlab 2019a+ for python 3.7):
   Find the file "setup.py" in `<PATH_TO_MATLAB>/<VERSION>/extern/engines/python/`
