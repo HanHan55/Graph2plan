@@ -41,7 +41,7 @@ def loadMatlabEng():
     startengview = time.clock()
     global engview
     engview = matlab.engine.start_matlab()
-    engview.addpath(r'../House/align_fp/', nargout=0)
+    engview.addpath(r'./align_fp/', nargout=0)
     endengview = time.clock()
     print(' matlab.engineview time: %s Seconds' % (endengview - startengview))
 
@@ -49,9 +49,9 @@ def loadMatlabEng():
 def loadRetrieval():
     global tf_train, centroids, clusters
     t1 = time.clock()
-    tf_train = np.load('../House/retrieval/tf_train.npy')
-    centroids = np.load('../House/retrieval/centroids_train.npy')
-    clusters = np.load('../House/retrieval/clusters_train.npy')
+    tf_train = np.load('./retrieval/tf_train.npy')
+    centroids = np.load('./retrieval/centroids_train.npy')
+    clusters = np.load('./retrieval/clusters_train.npy')
     t2 = time.clock()
     print('load tf/centroids/clusters', t2 - t1)
 
@@ -60,7 +60,7 @@ def getTestData():
     start = time.clock()
     global test_data, testNameList, trainNameList
  
-    test_data = pickle.load(open('../House/static/Data/data_test_converted.pkl', 'rb'))
+    test_data = pickle.load(open('./static/Data/data_test_converted.pkl', 'rb'))
     test_data, testNameList, trainNameList = test_data['data'], list(test_data['testNameList']), list(
         test_data['trainNameList'])
     end = time.clock()
@@ -71,12 +71,12 @@ def getTrainData():
     start = time.clock()
     global train_data, trainNameList, trainTF, train_data_eNum, train_data_rNum
     
-    train_data = pickle.load(open('../House/static/Data/data_train_converted.pkl', 'rb'))
+    train_data = pickle.load(open('./static/Data/data_train_converted.pkl', 'rb'))
     train_data, trainNameList, trainTF = train_data['data'], list(train_data['nameList']), list(train_data['trainTF'])
     
-    train_data_eNum = pickle.load(open('../House/static/Data/data_train_eNum.pkl', 'rb'))
+    train_data_eNum = pickle.load(open('./static/Data/data_train_eNum.pkl', 'rb'))
     train_data_eNum = train_data_eNum['eNum']
-    train_data_rNum = np.load('../House/static/Data/rNum_train.npy')
+    train_data_rNum = np.load('./static/Data/rNum_train.npy')
 
     end = time.clock()
     print('getTrainData time: %s Seconds' % (end - start))
@@ -235,7 +235,7 @@ def TransGraph(request):
 
     fp_end = mlresult
    
-    sio.savemat("../House/static/" + userInfo.split(',')[0].split('.')[0] + ".mat", {"data": fp_end.data})
+    sio.savemat("./static/" + userInfo.split(',')[0].split('.')[0] + ".mat", {"data": fp_end.data})
 
     data_js = {}
     # fp_end  hsedge
@@ -409,7 +409,7 @@ def AdjustGraph(request):
             tmp = [x, y, x, h + y]
             data_js["windowsline"].append(tmp)
     
-    sio.savemat("../House/static/" + testname.split(',')[0].split('.')[0] + ".mat", {"data": fp_end.data})
+    sio.savemat("./static/" + testname.split(',')[0].split('.')[0] + ".mat", {"data": fp_end.data})
 
     end = time.clock()
     print('AdjustGraph time: %s Seconds' % (end - start))
@@ -594,7 +594,7 @@ def Save_Editbox(request):
     fp_end.data.order = np.array(box_order)
     fp_end.data.rBoundary = [np.array(rb) for rb in rBoundary]
     fp_end.data = add_dw_fp(fp_end.data)
-    sio.savemat("../House/static/" + userRoomID + ".mat", {"data": fp_end.data})
+    sio.savemat("./static/" + userRoomID + ".mat", {"data": fp_end.data})
     flag=1
     return HttpResponse(json.dumps(flag), content_type="application/json")
 

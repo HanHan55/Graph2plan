@@ -54,7 +54,7 @@ def load_model():
     model = Model()
     model.cuda(0)
     model.load_state_dict(
-        torch.load('../House/model/model.pth', map_location={'cuda:0': 'cuda:0'}))
+        torch.load('./model/model.pth', map_location={'cuda:0': 'cuda:0'}))
     model.eval()
     return model
 

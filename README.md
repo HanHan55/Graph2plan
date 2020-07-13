@@ -26,18 +26,25 @@ This implementation requires the following dependencies (tested on Window 10):
 
 * Python 3.7 
 
-		conda create -n Graph2Plan python==3.7
-		conda activate Graph2Plan
-	
+  ```bash
+  conda create -n g2p_app python==3.7
+  conda activate g2p_app
+	```
+
 * SciPy, Django, Torch, Opencv, Pandas. You can quickly install/update these dependencies by running the following (replace pip with pip3 for Python 3.7):
 
-		conda install scipy django  pytorch==1.3.1 opencv torchvision==0.4.2 pandas==0.25.3
+  ```bash
+  conda install django opencv scipy pandas
+  conda install pytorch==1.3.1 torchvision -c pytorch
+  ``` 
+  **Note: there is a fatal bug when using Matlab and pytorch<1.5.0 together on Linux. Please install the latest pytorch 1.5.0+ to use the interface.**
 		
-* The matlab engine:
-  Find the file "setup.py" in <path_to_Matlab>\<version>\extern\engines\python\"
+* Install Matlab Python API (Matlab 2019a+ for python 3.7):
+  Find the file "setup.py" in `<PATH_TO_MATLAB>/<VERSION>/extern/engines/python/`
   
-		python setup.py install
-		
+  ```
+  python setup.py install
+	```
 
 
 ###  Run
@@ -48,7 +55,9 @@ This implementation requires the following dependencies (tested on Window 10):
 	
 * Run project:
 
-		python manage.py runserver 0.0.0.0:8000
+  ```bash
+  python manage.py runserver 0.0.0.0:8000
+  ```
 		
 * Open browser: http://127.0.0.1:8000/home
 			
@@ -57,39 +66,43 @@ This implementation requires the following dependencies (tested on Window 10):
 # Network
 ### Requirements
 
- The same vertion of Scipy, Django, Torch, Opencv, Pandas with the interface
+Create a new environment for training.
 
-```
-pip install tqdm tensorboardX pytorch-ignite==0.2.1
-```
+  ```bash
+  conda create -n g2p_train python==3.7
+  conda activate g2p_train
+  conda install django opencv scipy pandas
+  conda install pytorch==1.3.1 torchvision==0.4.2 -c pytorch
+  pip install tqdm tensorboardX pytorch-ignite==0.2.1
+  ```
 
 ### Prepare data
 
 **Data format**
 
-```
-data.mat
-    - name: file name in RPLAN dataset
-    - boundary: (x,y,dir,isNew), first two point indicate the front door
-    - order: room order for visualization
-    - rType: room categories
-    - rBoundary: (x,y), boundary points for each room
-    - gtBox: (y0,x0,y1,x1), left-top(in) and right-bottom(out) corner of a room, extracted directly from the RPLAN dataset
-    - gtBoxNew: (x0,y0,x1,y1), extracted after filling the gap between rooms
-    - rEdge: (u,v,r), room indices and relative position(u relative to v)
-```
+  ```
+  data.mat
+      - name: file name in RPLAN dataset
+      - boundary: (x,y,dir,isNew), first two point indicate the front door
+      - order: room order for visualization
+      - rType: room categories
+      - rBoundary: (x,y), boundary points for each room
+      - gtBox: (y0,x0,y1,x1), left-top(in) and right-bottom(out) corner of a room, extracted directly from the RPLAN dataset
+      - gtBoxNew: (x0,y0,x1,y1), extracted after filling the gap between rooms
+      - rEdge: (u,v,r), room indices and relative position(u relative to v)
+  ```
 
 **Split data for training**
 
-```
-python split.py
-```
+  ```bash
+  python split.py
+  ```
 
 ### Train
 
-```
-python train.py
-```
+  ```bash
+  python train.py
+  ```
 
 ### Application
 
