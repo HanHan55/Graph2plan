@@ -53,6 +53,9 @@ This implementation requires the following dependencies (tested on Window 10):
 
 	unzip the data to this repository
 	
+	The upload boundary in the interface is under the folder Interface\static\Data\Img\
+	
+	**Note: Place the unzipped data in a folder with the same file name as the project code.**
 * Run project:
 
   ```bash
