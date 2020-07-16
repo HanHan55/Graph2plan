@@ -67,7 +67,7 @@ This implementation requires the following dependencies (tested on Window 10):
 	
 
 # 2. Network & Post Processing
-# 2.1. Network
+## 2.1. Network
 ### Requirements
 
 Create a new environment for training.
