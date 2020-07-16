@@ -3,13 +3,13 @@ from django.http import HttpResponse, JsonResponse
 import json
 import model.test as mltest
 import model.utils as mdul
-from model.floorplandata import *
+from model.floorplan import *
 import retrieval.retrieval as rt
 import time
 import pickle
 import scipy.io as sio
 import numpy as np
-from model.add_archs import *
+from model.decorate import *
 import math
 import pandas as pd
 import matlab.engine

@@ -1,4 +1,4 @@
-from  model.floorplandata import *
+from  model.floorplan import *
 from  model.box_utils import *
 from  model.model import Model
 import os

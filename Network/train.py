@@ -471,7 +471,6 @@ def main(args):
 
     if not args.skip_train:
         trainer.run(train_loader,max_epochs=args.epoch)
-
     tb_logger.close()
 
     output = {}
@@ -592,7 +591,10 @@ def main(args):
         with open(f'{output_dir}/output_{start_time}_metrics.json','w') as f:
             f.write(str(metrics))
 
-    test_evaluator.run(test_loader)
+    if not args.skip_train:
+        test_evaluator.run(valid_loader)
+    else:
+        test_evaluator.run(test_loader)
     with open(f'{output_dir}/output_{start_time}.pkl','wb') as f:
         pickle.dump(output,f,pickle.HIGHEST_PROTOCOL)
 
