@@ -46,7 +46,7 @@ def parse_args():
 
     ''' Dataloader '''
     parser.add_argument('--batch_size', default=20, type=int)
-    parser.add_argument('--workers', default=16, type=int)
+    parser.add_argument('--workers', default=8, type=int)
     parser.add_argument('--train_shuffle', default='1', type=bool_flag)
 
     ''' Model '''
