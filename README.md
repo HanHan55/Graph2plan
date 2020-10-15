@@ -27,7 +27,7 @@ This implementation requires the following dependencies (tested on Window 10):
 * Python 3.7 
 
   ```bash
-  conda create -n g2p_app python==3.7
+  conda create -n g2p_app python=3.7
   conda activate g2p_app
 	```
 
@@ -73,7 +73,7 @@ This implementation requires the following dependencies (tested on Window 10):
 Create a new environment for training.
 
   ```bash
-  conda create -n g2p_train python==3.7
+  conda create -n g2p_train python=3.7
   conda activate g2p_train
   conda install django opencv scipy pandas
   conda install pytorch==1.3.1 torchvision==0.4.2 -c pytorch
