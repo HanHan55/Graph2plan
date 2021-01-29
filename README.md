@@ -89,7 +89,7 @@ Create a new environment for training.
 
   ```python
   import scipy.io as sio
-  data = sio.io.loadmat('data.mat', squeeze_me=True, struct_as_record=False)['data']
+  data = sio.loadmat('data.mat', squeeze_me=True, struct_as_record=False)['data']
   print(len(data)) # a data list
   ```
 
