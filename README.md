@@ -115,6 +115,8 @@ Create a new environment for training.
   python split.py
   ```
 
+More details in DataPreparation folder.
+
 ### Train
 
   Run the trainning script and the experiment logs and outputs are saved in `experiment` (created automatically).

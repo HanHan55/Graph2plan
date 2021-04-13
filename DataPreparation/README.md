@@ -62,7 +62,7 @@ edge_type = [
 We provide scripts to create the same data as we provided in Interface. Like DeepLayout, we use 75k for training and about 3k for validation and test.
 Started from the `Network/data/data.mat`:
 
-0. Change the data path to `Network/data/data.mat` in `config.py`
+0. Change the data path to the `data.mat` in `config.py`
 1. Run `1.tf_train.py`. It will create:
     - `trainTF.pkl`, `testTF.pkl`: Piecewise turning function. Each element is a dict like `{'x':[x0,...,xn],'y':[y0,...,yn]}`
     - `tf_train.npy`: Sampled turning function with shape (ntrain,1000)
