@@ -84,3 +84,6 @@ Started from the `Network/data/data.mat`:
         - tf: Piece with turning function
         - topK: 1000 indices of the training data has the minimun turning function with current data.
         - topK_rNum: Counts for differnt room type of each topK room
+6. **[Depends on [faiss](https://github.com/facebookresearch/faiss)]** Run `6.cluster.py`.  It will create:
+    - `centroids_train.npy`: 1000 discrete turning function cluster centroids (1000-d) of training data
+    - `clusters_train.npy`: 1000 nearest neighbors in training data of each centroid

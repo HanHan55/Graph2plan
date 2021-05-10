@@ -85,7 +85,7 @@ Create a new environment for training.
 **Data format**
 
   After getting the data introduced in the **Interface** part, you can find a compact dataset in `Network/data.mat`. It is extracted from [RPLAN](http://staff.ustc.edu.cn/~fuxm/projects/DeepLayout/index.html) using the [toolbox](https://github.com/zzilch/RPLAN-Toolbox).
-  It can be read by Matlab via `load('data.mat','data')` or ptyhon via
+  It can be read by Matlab via `load('data.mat','data')` or python via
 
   ```python
   import scipy.io as sio
