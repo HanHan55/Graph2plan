@@ -155,7 +155,13 @@ class FloorPlan():
             X,Y = np.linspace(0,1,w),np.linspace(0,1,h)
             boxes = boxes-np.array([y0,x0,y0,x0])
 
-        norm = lambda box:np.array([X[box[1]],Y[box[0]],X[box[3]-1],Y[box[2]-1]])
+        norm = lambda box:np.array([
+            X[max(box[1],0)],
+            Y[max(box[0],0)],
+            X[min(box[3]-1,w-1)],
+            Y[min(box[2]-1,h-1)]
+        ])
+        
         boxes = np.apply_along_axis(norm,1,boxes)
         boxes[:,2:]-=boxes[:,:2]
         boxes[:,:2]+=boxes[:,2:]/2
