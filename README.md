@@ -49,7 +49,7 @@ This implementation requires the following dependencies (tested on Window 10):
 
 ###  Run
 
-* Process Data: Download RPLAN from [here](http://staff.ustc.edu.cn/~fuxm/projects/DeepLayout/index.html) and processe them using the [toolbox](https://github.com/zzilch/RPLAN-Toolbox) and scripts in `DataPreparation`. We provide pre-processed data here just for convenient to reproduce the result in our paper: http://vcc.tech/file/upload_file/Data/G2P/Data.7z
+* Process Data: Download RPLAN from [here](http://staff.ustc.edu.cn/~fuxm/projects/DeepLayout/index.html) and processe them using the [toolbox](https://github.com/zzilch/RPLAN-Toolbox) and scripts in `DataPreparation`. We provide pre-processed data here just for convenient to reproduce the result in our paper: https://github.com/HanHan55/Graph2plan/releases/download/data/Data.zip
 
 	unzip the data to this repository
 	
