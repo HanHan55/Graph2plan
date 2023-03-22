@@ -34,13 +34,13 @@ This implementation requires the following dependencies (tested on Window 10):
 * You can quickly install/update these dependencies by running the following:
 
   ```bash
-#  (old)
-#  conda install django opencv scipy pandas shapely
-#  conda install pytorch==1.3.1 torchvision -c pytorch
-
-# change the url acchording to your CUDA version, refer to: https://pytorch.org/
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117 -U
-pip install django opencv-python scipy pandas shapely -U
+  #  (old)
+  #  conda install django opencv scipy pandas shapely
+  #  conda install pytorch==1.3.1 torchvision -c pytorch
+  
+  # change the url acchording to your CUDA version, refer to: https://pytorch.org/
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117 -U
+  pip install django opencv-python scipy pandas shapely -U
   ``` 
   **Note: there is a fatal error when using Matlab and pytorch<1.5.0 together on Linux. Please install the latest pytorch 1.5.0+ to use the interface and run post processing.**
 		
@@ -80,13 +80,13 @@ Create a new environment for training.
   ```bash
   conda create -n g2p_train python=3.7
   conda activate g2p_train
-#  (old)
-#  conda install django opencv scipy pandas
-#  conda install pytorch==1.3.1 torchvision==0.4.2 -c pytorch
-
-# change the url acchording to your CUDA version, refer to: https://pytorch.org/
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117 -U
-pip install django opencv-python scipy pandas shapely tqdm tensorboardX pytorch-ignite==0.2.1 -U
+  #  (old)
+  #  conda install django opencv scipy pandas
+  #  conda install pytorch==1.3.1 torchvision==0.4.2 -c pytorch
+  
+  # change the url acchording to your CUDA version, refer to: https://pytorch.org/
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117 -U
+  pip install django opencv-python scipy pandas shapely tqdm tensorboardX pytorch-ignite==0.2.1 -U
   ```
 
 ### Prepare data
