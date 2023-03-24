@@ -27,7 +27,7 @@ This implementation requires the following dependencies (tested on Window 10):
 * Python 3.7 
 
   ```bash
-  conda create -n g2p_app python=3.7
+  conda create -n g2p_app python=3.9 # python=3.7
   conda activate g2p_app
 	```
 
@@ -78,7 +78,7 @@ This implementation requires the following dependencies (tested on Window 10):
 Create a new environment for training.
 
   ```bash
-  conda create -n g2p_train python=3.7
+  conda create -n g2p_train python=3.9 #python=3.7
   conda activate g2p_train
   #  (old)
   #  conda install django opencv scipy pandas
@@ -137,7 +137,7 @@ More details in DataPreparation folder.
   python train.py --skip_train 1 
   ```
 
-## 2.2. Post processing
+## 2.2. Post processing & Generate without Interface
 The final output of the network is a raster floorplan image and one bounding box for each room (the refined one). An issue that may occur with the output boxes is that they may not be well-aligned and some boxes may overlap in certain regions. So we need some post processing.
 
 ### Requirements
@@ -152,9 +152,9 @@ python test.py
 ```
 A floorplan image `test.png` will be generated.  
 
-### Test with interface data
+### Test with boundary images
 
-Get the data introduced in the **Interface** part, and run
+Get the data introduced in the **Interface** part (`Interface\static\Data\Img\`), and run
 
 ```
 python test_interface_data.py
